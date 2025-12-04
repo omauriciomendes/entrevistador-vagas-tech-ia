@@ -41,3 +41,5 @@ São essenciais conhecimentos em engenharia de prompts, uso de agentes de IA, Gi
 
 Soft skills  
 São valorizadas atitudes como proatividade, curiosidade, capacidade de resolver problemas, disposição para aprender coisas novas e boa comunicação com o time, conectando o universo técnico de IA ao dia a dia musical.
+
+Add example of interview and summary
