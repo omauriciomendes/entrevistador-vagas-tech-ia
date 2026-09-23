@@ -1,6 +1,6 @@
 # Entrevistador de Vagas Tech com IA
 
-Este projeto apresenta um entrevistador técnico estruturado para vagas de tecnologia. Ele conduz a entrevista com perguntas uma por vez e, ao final, gera um resumo analítico baseado nas respostas fornecidas pelo usuário. O objetivo é facilitar a criação de descrições de vagas, alinhamentos internos e processos de recrutamento usando lógica simples ou integrado com ferramentas de IA.
+Este projeto apresenta um entrevistador técnico estruturado para vagas de tecnologia. Ele conduz a entrevista com perguntas uma por vez e, ao final, organiza as respostas num resumo por tema. O arquivo de prompt leva o mesmo fluxo para uma IA, que escreve o resumo analítico. O objetivo é facilitar alinhamentos internos e processos de recrutamento, com um script simples ou com o prompt usado numa ferramenta de IA.
 
 ## Objetivo do Projeto
 
@@ -14,23 +14,25 @@ Criar uma ferramenta simples e reutilizável que ajuda pessoas de RH, Tech Leads
   Senioridade
   Stack e práticas essenciais
   Soft skills
-* Geração de resumo analítico após confirmação do usuário
+* Resumo por tema após a confirmação do usuário (o resumo analítico escrito fica com a IA, pelo prompt)
 * Arquivo de prompt reutilizável para IA
 * Script em Python executável no terminal
+* Versão web com Streamlit
 
 ## Estrutura do Projeto
 
 ```
 entrevistador-vagas-tech-ia/
   README.md
+  app.py                 versão web (Streamlit)
+  requirements.txt
   src/
-    interviewer.py
+    interviewer.py       versão de terminal
   prompts/
     entrevistador_ia_tech.md
   examples/
     exemplo_respostas_e_resumo.md
   .gitignore
-  LICENSE
 ```
 
 ## Como Instalar e Executar
@@ -50,26 +52,26 @@ python src/interviewer.py
 
 O terminal iniciará o fluxo de perguntas. No final, você pode confirmar se deseja gerar o resumo.
 
+Para a versão web, instale as dependências e rode o Streamlit
+
+```
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+O navegador abre um formulário com as quatro perguntas e o botão para gerar o resumo analítico.
+
 ## Conteúdo do Prompt
 
 O arquivo `prompts/entrevistador_ia_tech.md` contém toda a lógica de comportamento caso você queira usar o entrevistador em uma IA. O prompt segue regras específicas como perguntar uma coisa por vez, nunca criar job description e só gerar o resumo com confirmação.
 
 ## Exemplo de Uso
 
-O arquivo `examples/exemplo_respostas_e_resumo.md` mostra uma sessão completa incluindo perguntas, respostas e o resumo gerado.
+O arquivo `examples/exemplo_respostas_e_resumo.md` mostra uma sessão completa: perguntas, respostas, a saída real do script e um exemplo do resumo que o prompt pede a uma IA.
 
 ## Melhorias Futuras
 
-* Criar interface web simples usando Streamlit ou Gradio
 * Adicionar suporte para salvar as respostas em JSON
 * Integrar com API de IA para gerar resumos mais ricos
 * Criar múltiplos modelos de entrevistas
 * Adicionar suporte a diferentes idiomas
-
-## Licença
-
-Este projeto pode ser usado livremente de acordo com a licença escolhida pelo autor.
-
----
-
-
